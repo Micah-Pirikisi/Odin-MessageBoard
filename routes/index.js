@@ -25,17 +25,30 @@ router.get("/new", (req, res) => {
   res.render("form", { title: "New Message" });
 });
 
-router.post('/new', (req, res) => {
+router.post("/new", (req, res) => {
   const { user, text } = req.body;
-  
+
   messages.push({
     text: text,
     user: user,
-    added: new Date()
+    added: new Date(),
   });
 
-  res.redirect('/');
+  res.redirect("/");
 });
 
+router.get("/message/:id", (req, res) => {
+  const id = req.params.id;
+  const message = messages[id];
+
+  if (!message) {
+    return res.status(404).send("Message not found");
+  }
+
+  res.render("message", {
+    title: "Message Details",
+    message: message,
+  });
+});
 
 module.exports = router;
