@@ -7,12 +7,13 @@
     <h1><%= title %></h1>
 
     <p><a href="/new">➕ Add a New Message</a></p>
-    
+
     <ul>
       <% messages.forEach(message => { %>
       <li>
         <strong><%= message.user %></strong>: <%= message.text %><br />
         <small><%= message.added.toLocaleString() %></small>
+        <a href="/message/<%= index %>">Open</a>
       </li>
       <% }) %>
     </ul>

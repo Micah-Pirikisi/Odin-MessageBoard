@@ -10,9 +10,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 
 // Index route
-app.get("/", (req, res) => {
-  res.render("index", { title: "Home Page" });
-});
+app.use("/", indexRouter); 
 
 const PORT = 3000;
 app.listen(PORT, () => {
