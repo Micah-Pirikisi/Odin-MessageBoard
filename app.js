@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 // Index route
 app.use("/", indexRouter); 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
