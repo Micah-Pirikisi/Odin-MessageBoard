@@ -9,10 +9,10 @@
     <p><a href="/new">➕ Add a New Message</a></p>
 
     <ul>
-      <% messages.forEach(message => { %>
+      <% messages.forEach((message, index) => { %>
       <li>
         <strong><%= message.user %></strong>: <%= message.text %><br />
-        <small><%= message.added.toLocaleString() %></small>
+        <small><%= message.added.toLocaleString() %></small><br />
         <a href="/message/<%= index %>">Open</a>
       </li>
       <% }) %>
