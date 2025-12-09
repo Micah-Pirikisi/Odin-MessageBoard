@@ -4,6 +4,15 @@
     <title><%= title %></title>
   </head>
   <body>
-    <h1>Hello from Express + EJS!</h1>
+    <h1><%= title %></h1>
+
+    <ul>
+      <% messages.forEach(message => { %>
+      <li>
+        <strong><%= message.user %></strong>: <%= message.text %><br />
+        <small><%= message.added.toLocaleString() %></small>
+      </li>
+      <% }) %>
+    </ul>
   </body>
 </html>
