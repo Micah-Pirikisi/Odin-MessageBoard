@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-</head>
-<body>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container parchment">
+      <h1><%= title %></h1>
 
-  <h1><%= title %></h1>
+      <form method="POST" action="/new">
+        <div class="form-group">
+          <label for="author">Your Name</label>
+          <input
+            type="text"
+            id="author"
+            name="user"
+            placeholder="Enter your name..."
+            required
+          />
+        </div>
 
-  <form method="POST" action="/new">
-    <div>
-      <label for="author">Your Name</label><br>
-      <input type="text" id="author" name="user" required>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="text"
+            placeholder="Write your message on the notice board..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit">[*] Post Message</button>
+        <a href="/" class="nav-button" style="margin-left: 10px"
+          >[<] Back to Board</a
+        >
+      </form>
     </div>
-
-    <div>
-      <label for="message">Message</label><br>
-      <textarea id="message" name="text" required></textarea>
-    </div>
-
-    <button type="submit">Submit</button>
-  </form>
-
-</body>
+  </body>
 </html>

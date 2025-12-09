@@ -3,20 +3,20 @@ const router = express.Router();
 
 const messages = [
   {
-    text: "Hi there!",
-    user: "Amando",
+    text: "Saw 'em in the sky, I did! Green fellows with wide black eyes!",
+    user: "Hubert-Who-Knows",
     added: new Date(),
   },
   {
-    text: "Hello World!",
-    user: "Charles",
+    text: "One o' yous stole me goat! Week's worth o' my famous porridge to whoever finds 'em!",
+    user: "Old Lady Margaret",
     added: new Date(),
   },
 ];
 
 router.get("/", (req, res) => {
   res.render("index", {
-    title: "Mini Messageboard",
+    title: "Village Noticeboard",
     messages: messages,
   });
 });

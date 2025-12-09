@@ -1,0 +1,289 @@
+/* Medieval Notice Board Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+  background-attachment: fixed;
+  color: #3d2817;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Wood texture background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.05) 2px,
+      rgba(255, 255, 255, 0.05) 4px
+    );
+  pointer-events: none;
+  z-index: -2;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #8b6f47 0%, #a0876d 50%, #8b6f47 100%);
+  border: 8px solid #4a3728;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  position: relative;
+}
+
+/* Notice board nails */
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 30% 30%, #e8e8e8, #8a8a8a);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container::before {
+  top: 15px;
+  left: 25px;
+}
+
+.container::after {
+  top: 15px;
+  right: 25px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c1810;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #4a3728;
+  padding-bottom: 15px;
+}
+
+h1::before {
+  content: "⚔";
+  margin-right: 15px;
+}
+
+h1::after {
+  content: "⚔";
+  margin-left: 15px;
+}
+
+/* Messages list */
+.messages-list {
+  list-style: none;
+}
+
+.message-item {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #8b6f47;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.message-author {
+  font-weight: bold;
+  color: #8b4513;
+  font-size: 1.1em;
+}
+
+.message-text {
+  color: #3d2817;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.message-date {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.message-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: linear-gradient(180deg, #c9a961 0%, #a87d3d 100%);
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #5a3d1f;
+  border-radius: 2px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.message-link:hover {
+  background: linear-gradient(180deg, #d4b574 0%, #b38a4a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation */
+.nav-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, #c9a961 0%, #a87d3d 100%);
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #5a3d1f;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:hover {
+  background: linear-gradient(180deg, #d4b574 0%, #b38a4a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  color: #2c1810;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #8b6f47;
+  background: rgba(255, 255, 255, 0.95);
+  color: #3d2817;
+  font-family: "Georgia", serif;
+  font-size: 1em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 8px rgba(139, 69, 19, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+  font-style: italic;
+}
+
+button[type="submit"] {
+  padding: 12px 30px;
+  background: linear-gradient(180deg, #c9a961 0%, #a87d3d 100%);
+  color: #fff;
+  border: 3px solid #5a3d1f;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: "Georgia", serif;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(180deg, #d4b574 0%, #b38a4a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Message details page */
+.message-details {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #8b6f47;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.message-details p {
+  margin-bottom: 15px;
+  color: #3d2817;
+  font-size: 1.05em;
+}
+
+.message-details strong {
+  color: #8b4513;
+}
+
+/* Scroll styled parchment feel */
+.parchment {
+  position: relative;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h1::before,
+  h1::after {
+    display: none;
+  }
+
+  .container::before,
+  .container::after {
+    width: 12px;
+    height: 12px;
+    top: 10px;
+  }
+
+  .container::before {
+    left: 15px;
+  }
+
+  .container::after {
+    right: 15px;
+  }
+}
